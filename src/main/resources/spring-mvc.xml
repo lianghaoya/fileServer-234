@@ -10,12 +10,24 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<context:component-scan base-package="com.cs.home234.controller"></context:component-scan>
+	<context:component-scan base-package="com.cs.home234.controller" use-default-filters="false">
+		<context:include-filter type="annotation"
+								expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<context:annotation-config></context:annotation-config>
+
+	<!--如果有jsp文件 放入该目录下-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<!--resources 目录下放 静态资源 比如 图片， .js  .css  .html 等-->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
 	<mvc:annotation-driven />
-	<!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/pages/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>-->
-   <context:annotation-config></context:annotation-config>
 
 	</beans>
