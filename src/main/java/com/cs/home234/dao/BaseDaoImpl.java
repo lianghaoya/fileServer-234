@@ -15,7 +15,8 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
     }
     @Override
     public T get(Long id) {
-        return null;
+        T t=(T)getSession().selectOne("com.cs.home234.Entity.User",id);
+        return t;
     }
 
     @Override

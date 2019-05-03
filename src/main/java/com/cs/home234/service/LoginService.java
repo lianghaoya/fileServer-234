@@ -17,4 +17,9 @@ public class LoginService extends BaseServiceImpl<User>{
         super.setBaseDao(loginDao);
         this.loginDao = loginDao;
     }
+
+    @Override
+    public User get(String id) {
+        return loginDao.get(id);
+    }
 }

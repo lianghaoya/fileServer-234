@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="com.cs.home234.Entity.User.java">
+<mapper namespace="com.cs.home234.Entity.User">
+    <select id="getById" parameterType="string" resultType="com.cs.home234.Entity.User">
+        select u.uid ,u.username as userName,u.password,u.email,u.code,u.state from user u where uid=#{id};
+    </select>
+    <!--<resultMap id="getUser" type="com.cs.home234.Entity.User">
+        <id property="isd" column="id"></id>
+        <result property="userName" column="user_name"></result>
+        <result property="" column=""></result>
+        <result property="" column=""></result>
 
+    </resultMap>-->
 </mapper>
