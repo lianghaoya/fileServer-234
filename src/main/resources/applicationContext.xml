@@ -23,13 +23,13 @@ http://www.springframework.org/schema/aop
     <!--<context:property-placeholder location="classpath:db.properties"/>-->
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/estore?autoReconnect=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC"></property>
-        <property name="user" value="root"></property>
-        <property name="password" value="123"></property>
-        <!--<property name="initialPoolSize" value="3"></property>
-        &lt;!&ndash; 连接池中保留的最小连接数，默认为：3&ndash;&gt;
-        <property name="minPoolSize" value="3"></property>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://120.78.165.55:3306/site?autoReconnect=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC"></property>
+        <property name="user" value="husky"></property>
+        <property name="password" value="husky"></property>
+       <!-- <property name="initialPoolSize" value="3"></property>-->
+        <!-- 连接池中保留的最小连接数，默认为：3-->
+       <!-- <property name="minPoolSize" value="3"></property>
         &lt;!&ndash;连接池中保留的最大连接数。默认值: 15 &ndash;&gt;
         <property name="maxPoolSize" value="15"></property>
         &lt;!&ndash;当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。默认值: 3 &ndash;&gt;
@@ -45,7 +45,7 @@ http://www.springframework.org/schema/aop
         &lt;!&ndash;maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。默认值: 0 &ndash;&gt;
         <property name="maxStatementsPerConnection" value="0"> </property>
         &lt;!&ndash;定义所有连接测试都执行的测试语句。在使用连接测试的情况下这个一显著提高测试速度。测试的表必须在初始数据源的时候就存在。Default: null&ndash;&gt;
-        <property name="preferredTestQuery" value="select 1 from comp"> </property>
+        &lt;!&ndash;<property name="preferredTestQuery" value="select 1 from comp"> </property>&ndash;&gt;
         &lt;!&ndash;每1800秒检查所有连接池中的空闲连接。Default: 0 &ndash;&gt;
         <property name="idleConnectionTestPeriod" value="1800"></property>
         &lt;!&ndash; 获取连接时测试有效性，每次都验证连接是否可用 &ndash;&gt;

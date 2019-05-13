@@ -19,7 +19,7 @@
 	<!--如果有jsp文件 放入该目录下-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/WEB-INF/views/jsp/</value>
+			<value>/WEB-INF/html/jsp/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>

@@ -1,13 +1,22 @@
 package com.cs.home234.Entity;
 
 public class User {
-    private String uid;
+    private String uid;//数据库主键
+    private String id;//写死的用户id
     private String password;
     private String email;
     private String userName;
     private Integer state;
     private String code;
     public User() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUid() {

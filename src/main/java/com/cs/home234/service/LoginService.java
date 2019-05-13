@@ -22,4 +22,18 @@ public class LoginService extends BaseServiceImpl<User>{
     public User get(String id) {
         return loginDao.get(id);
     }
+
+    public User register(User u){
+        User user=loginDao.register(u);
+        return user;
+    }
+    public User login(String userName,String password) throws Exception{
+        User user=loginDao.get(userName);
+        if (user==null)
+            throw new Exception("用户名错误");
+        if(!user.getPassword().equals(password))
+            throw new Exception("密码错误");
+        return user;
+    }
+
 }

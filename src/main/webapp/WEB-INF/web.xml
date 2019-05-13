@@ -15,6 +15,14 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <servlet>
+    <servlet-name>image</servlet-name>
+    <servlet-class>com.cs.home234.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>image</servlet-name>
+    <url-pattern>/front/user_check</url-pattern>
+  </servlet-mapping>
   <!-- spring mvc 启动入口-->
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
